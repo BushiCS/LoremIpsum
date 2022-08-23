@@ -23,14 +23,18 @@ public class Main {
 
         int max = -1;
         int min = Integer.MAX_VALUE;
+        char maxSym = ' ';
+        char minSym = ' ';
         for (Map.Entry<Character, Integer> kv : map.entrySet()) {
             if (kv.getValue() > max) {
                 max = kv.getValue();
+                maxSym = kv.getKey();
             } else if (kv.getValue() < min) {
                 min = kv.getValue();
+                minSym = kv.getKey();
             }
         }
-        System.out.println("max: " + max);
-        System.out.println("min: " + min);
+        System.out.println("max (" + maxSym + "): " + max);
+        System.out.println("min (" + minSym + "): " + min);
     }
 }
