@@ -26,12 +26,14 @@ public class Main {
         char maxSym = ' ';
         char minSym = ' ';
         for (Map.Entry<Character, Integer> kv : map.entrySet()) {
-            if (kv.getValue() > max) {
-                max = kv.getValue();
-                maxSym = kv.getKey();
-            } else if (kv.getValue() < min) {
-                min = kv.getValue();
-                minSym = kv.getKey();
+            if (!kv.getKey().equals(' ') && !kv.getKey().equals(',') && !kv.getKey().equals('.')) {
+                if (kv.getValue() > max) {
+                    max = kv.getValue();
+                    maxSym = kv.getKey();
+                } else if (kv.getValue() < min) {
+                    min = kv.getValue();
+                    minSym = kv.getKey();
+                }
             }
         }
         System.out.println("max (" + maxSym + "): " + max);
