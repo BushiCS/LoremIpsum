@@ -30,7 +30,12 @@ public class Main {
                 if (kv.getValue() > max) {
                     max = kv.getValue();
                     maxSym = kv.getKey();
-                } else if (kv.getValue() < min) {
+                }
+            }
+        }
+        for (Map.Entry<Character, Integer> kv : map.entrySet()) {
+            if (!kv.getKey().equals(' ') && !kv.getKey().equals(',') && !kv.getKey().equals('.')) {
+                if (kv.getValue() < min) {
                     min = kv.getValue();
                     minSym = kv.getKey();
                 }
